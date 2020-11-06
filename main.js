@@ -1,10 +1,11 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee col-12 col-sm-6 col-md-4 col-lg-2"><div class = "card" style="width: 18rem"><div class = "card-body">';
+    var html = '<div class="coffee col-12"><div class = "card">' + coffee.image + '<div class = "card-body">';
     // html += '<td>' + coffee.id + '</td>';
-    html += '<h5 class = "card-title">' + coffee.name + '</h5>';
-    html += '<p class = "card-text">' + coffee.roast + '</p>';
+    html += '<h4 class = "card-title">' + coffee.name + '</h4>';
+    html += '<h6 class = "card-title">' + coffee.roast + '</h6>';
+    html += '<p class = "card-text">' + coffee.description + '</p>';
     html += ' <a href="#" class="btn btn-light">Order Now!</a>'
     html += '</div></div></div>';
 
@@ -87,20 +88,89 @@ function addCoffees() {
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
-    {id: 1, name: 'Light City', roast: 'light'},
-    {id: 2, name: 'Half City', roast: 'light'},
-    {id: 3, name: 'Cinnamon', roast: 'light'},
-    {id: 4, name: 'City', roast: 'medium'},
-    {id: 5, name: 'American', roast: 'medium'},
-    {id: 6, name: 'Breakfast', roast: 'medium'},
-    {id: 7, name: 'High', roast: 'dark'},
-    {id: 8, name: 'Continental', roast: 'dark'},
-    {id: 9, name: 'New Orleans', roast: 'dark'},
-    {id: 10, name: 'European', roast: 'dark'},
-    {id: 11, name: 'Espresso', roast: 'dark'},
-    {id: 12, name: 'Viennese', roast: 'dark'},
-    {id: 13, name: 'Italian', roast: 'dark'},
-    {id: 14, name: 'French', roast: 'dark'},
+    {   id: 1,
+        name: 'Light City',
+        roast: 'medium',
+        image: "<img src=\"img/light-city.jpeg\" class=\"card-img-top\" alt=\"...\">",
+        description: "It has a medium brown colour and is just a little oily on the surface. It is used in everyday coffee to bring a richer and sweeter taste to your coffee that you will remember."
+    },
+    {   id: 2,
+        name: 'Half City',
+        roast: 'light', image: "<img src=\"img/half-city.jpeg\" class=\"card-img-top\" alt=\"...\">",
+        description: "It has a fully developed flavor and body, but little caramelization to add sweetness to the cup."
+    },
+    {   id: 3,
+        name: 'Cinnamon',
+        roast: 'light',
+        image: "<img src=\"img/cinnamon.jpeg\" class=\"card-img-top\" alt=\"...\">",
+        description: "In this roast, the beans barely enter first crack, resulting in a relatively dry bean with a light brown color.Coffee brewed from a cinnamon roast often has a sour taste, regardless of origin. "
+    },
+    {   id: 4,
+        name: 'City',
+        roast: 'medium',
+        image: "<img src=\"img/city.jpeg\" class=\"card-img-top\" alt=\"...\">",
+        description: ""
+    },
+    {   id: 5,
+        name: 'American',
+        roast: 'medium',
+        image: "<img src=\"img/american.jpeg\" class=\"card-img-top\" alt=\"...\">",
+        description: ""
+    },
+    {   id: 6,
+        name: 'Breakfast',
+        roast: 'medium',
+        image: "<img src=\"img/breakfast.jpg\" class=\"card-img-top\" alt=\"...\">",
+        description: ""
+    },
+    {   id: 7,
+        name: 'High',
+        roast: 'dark',
+        image: "<img src=\"img/high.jpeg\" class=\"card-img-top\" alt=\"...\">",
+        description: ""
+    },
+    {   id: 8,
+        name: 'Continental',
+        roast: 'dark',
+        image: "<img src=\"img/continental.jpeg\" class=\"card-img-top\" alt=\"...\">",
+        description: ""
+    },
+    {   id: 9,
+        name: 'New Orleans',
+        roast: 'dark',
+        image: "<img src=\"img/new-orleans.jpeg\" class=\"card-img-top\" alt=\"...\">",
+        description: ""
+    },
+    {   id: 10,
+        name: 'European',
+        roast: 'dark',
+        image: "<img src=\"img/\" class=\"card-img-top\" alt=\"...\">",
+        description: ""
+    },
+    {   id: 11,
+        name: 'Espresso',
+        roast: 'dark',
+        image: "<img src=\"img/espresso.jpg\" class=\"card-img-top\" alt=\"...\">",
+        description: "Espresso has all of the same flavors of coffee but amplified—bitter, lightly sweet, acidic, toasty."
+    },
+    {   id: 12,
+        name: 'Viennese',
+        roast: 'dark',
+        image: "<img src=\"img/\" class=\"card-img-top\" alt=\"...\">",
+        description: "Characterized by a slightly deeper color than American Roast, with small spots of oil on the bean's surface."
+    },
+    {   id: 13,
+        name: 'Italian',
+        roast: 'dark',
+        image: "<img src=\"img/italian.jpg\" class=\"card-img-top\" alt=\"...\">",
+        description: "In this roast, the beans pass second crack. Italian roasted beans have a dark color and a shiny surface from its oils."
+    },
+    {   id: 14,
+        name: 'French',
+        roast: 'dark',
+        image: "<img src=\"img/french_roast.jpg\" class=\"card-img-top\" alt=\"...\">",
+        description: "In this roast, the beans are well into the second crack. French roasted beans will have a dark brown color and a shiny surface from its oils."
+    },
 ];
 
 var tbody = document.querySelector('#coffees');

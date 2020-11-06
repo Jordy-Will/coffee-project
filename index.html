@@ -3,59 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
-<div class = 'container company'></div>
-    <h1>Coffee!</h1>
-</div>
-    <form>
-        <label for="roast-selection"></label>
-        <select id="roast-selection">
-            <option id="all">All Roasts</option>
-            <option>light</option>
-            <option>medium</option>
-            <option>dark</option>
-        </select>
-<!--        <input id="submit" type="submit" />-->
-    </form>
+    <div class="nav-background bg-light"></div>
+        <div class="wrapper">
+            <nav class="navbar navbar-light">
+                <div class="container-fluid">
+                    <ul class="nav w-100 justify-content-center">
 
-    <input type="text" id="user_coffee">
-    <input type="button" value="Submit" id="search">
+                        <li class="order-md-3 order-lg-0 mr-lg-auto">
+                            <a href="#" class="navbar-brand d-block w-100 mb-2 m-md-0 text-center">
+                                <img class="" width="105px" src="img/logo.png" alt="Codeup Design logo">
+                            </a>
+                        </li>
+                        <div class="w-100 d-md-none"></div><!-- used to force line break in flex items for mobile -->
+                        <li class="nav-item order-md-1 order-lg-1 mt-md-5">
+                            <a class="nav-link text-uppercase px-2 px-md-3" href="">Home</a>
+                        </li>
+                        <li class="nav-item order-md-2 order-lg-2 mt-md-5">
+                            <a class="nav-link text-uppercase px-2 pl-md-3 pr-md-0 px-lg-3" href="">Shop</a>
+                        </li>
+                        <li class="nav-item order-md-4 order-lg-3 mt-md-5">
+                            <a class="nav-link text-uppercase px-2 pl-md-0 pr-md-3 px-lg-3" href="">About</a>
+                        </li>
+                        <li class="nav-item order-md-5 order-lg-4 mt-md-5">
+                            <a class="nav-link text-uppercase px-2 px-md-3" href="">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
 
-<div class="container input">
-    <div class="row">
-        <div class="col-12">
-            <form>
-                <label for="roast-creation">Roast Type</label><br>
-                <select id="roast-creation">
-                    <option>light</option>
-                    <option>medium</option>
-                    <option>dark</option>
-                </select><br>
-                <input type='text' id='user_create' placeholder="Coffee Name"><br>
-                <input type="button" class="button" id="add" value="Add To List">
-            </form>
+    <div class="jumbotron jumbotron-fluid" id="main-jumbotron">
+        <div class="container">
+            <h1 class="display-4">Will&Jordy's</h1>
+            <p class="lead">Check out our selection of coffees!</p>
         </div>
     </div>
-</div>
 
-<div class="container list">
-    <ul id='list'></ul>
-</div>
+    <div class="container-fluid forms">
+        <div class="row">
+            <div class="col-6 forms">
+                <h2>Pick from our selection!</h2>
+                <form>
+                    <div class="form-group">
+                    <label for="roast-selection"></label>
+                        <select id="roast-selection" class="form-control">
+                            <option id="all">All Roasts</option>
+                            <option>light</option>
+                            <option>medium</option>
+                            <option>dark</option>
+                        </select>
+                    </div>
+            <!--        <input id="submit" type="submit" />-->
+                </form>
 
-    <table>
-        <thead>
-            <tr>
-<!--                <th>ID</th>-->
-<!--                <th>NAME</th>-->
-<!--                <th>ROAST</th>-->
-            </tr>
-        </thead>
-        <tbody id="coffees" class = 'row'></tbody>
-    </table>
+                <input type="text" id="user_coffee" placeholder="Enter Coffee Name">
+                <input type="button" value="Submit" id="search">
+
+            </div>
+
+            <div class="col-6 forms">
+                <h2>Add your coffee here!</h2>
+                <div class="container input">
+                    <div class="row">
+                        <div class="col-12">
+                            <form>
+                                <div class="form-group">
+                                <label for="roast-creation"></label>
+                                <select id="roast-creation" placeholder="Roast Type" class="form-control">
+                                    <option selected>--Select Roast Type--</option>
+                                    <option>light</option>
+                                    <option>medium</option>
+                                    <option>dark</option>
+                                </select><br>
+                                <input type='text' id='user_create' placeholder="Enter Coffee Name">
+                                <input type="button" class="button" id="add" value="Add To List">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div id="coffees" class = 'row'></div>
+    </div>
 
 
     <script src="main.js"></script>
