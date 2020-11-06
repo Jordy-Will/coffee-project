@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -46,10 +47,10 @@
         </div>
     </div>
 
-    <div class="container-fluid forms">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-6 forms">
-                <h2>Pick from our selection!</h2>
+                <h3>Pick from our selection!</h3>
                 <form>
                     <div class="form-group">
                     <label for="roast-selection"></label>
@@ -60,16 +61,15 @@
                             <option>dark</option>
                         </select>
                     </div>
-            <!--        <input id="submit" type="submit" />-->
                 </form>
 
-                <input type="text" id="user_coffee" placeholder="Enter Coffee Name">
-                <input type="button" value="Submit" id="search">
+                <input type="text" id="user_coffee" placeholder="Enter Coffee Name" class = "form-control">
+                <input type="button" value="Search" id="search" class =" btn btn-light">
 
             </div>
 
             <div class="col-6 forms">
-                <h2>Add your coffee here!</h2>
+                <h3>Add your coffee here!</h3>
                 <div class="container input">
                     <div class="row">
                         <div class="col-12">
@@ -81,9 +81,9 @@
                                     <option>light</option>
                                     <option>medium</option>
                                     <option>dark</option>
-                                </select><br>
-                                <input type='text' id='user_create' placeholder="Enter Coffee Name">
-                                <input type="button" class="button" id="add" value="Add To List">
+                                </select>
+                                <input type='text' id='user_create' placeholder="Enter Coffee Name" class = "form-control">
+                                <input type="button" class="button btn btn-light " id="add" value="Add To List">
                                 </div>
                             </form>
                         </div>

@@ -1,7 +1,7 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee col-12"><div class = "card">' + coffee.image + '<div class = "card-body">';
+    var html = '<div class="coffee col-6"><div class = "card">' + coffee.image + '<div class = "card-body">';
     // html += '<td>' + coffee.id + '</td>';
     html += '<h4 class = "card-title">' + coffee.name + '</h4>';
     html += '<h6 class = "card-title">' + coffee.roast + '</h6>';
@@ -72,6 +72,8 @@ function addCoffees() {
     var newName = nameArr.join("");
     newCoffee.name = newName;
     newCoffee.roast = userRoast.value;
+    newCoffee.image = "<img src='img/user-coffee.jpeg'>"
+    newCoffee.description = lorem
     newCoffee.id =coffees.length+1;
     coffees.push(newCoffee)
     tbody.innerHTML = renderCoffees(coffees);
@@ -109,43 +111,43 @@ var coffees = [
         name: 'City',
         roast: 'medium',
         image: "<img src=\"img/city.jpeg\" class=\"card-img-top\" alt=\"...\">",
-        description: ""
+        description: "Brewed from beans roasted to this degree will present the full flavor present in the beans without having its characteristics masked by the roast. A city roast will tend to highlight bright, acidic notes."
     },
     {   id: 5,
         name: 'American',
         roast: 'medium',
         image: "<img src=\"img/american.jpeg\" class=\"card-img-top\" alt=\"...\">",
-        description: ""
+        description: "American Roast is the traditional roasting style of American coffee. It produces a flavorful, complex cup of coffee."
     },
     {   id: 6,
         name: 'Breakfast',
         roast: 'medium',
         image: "<img src=\"img/breakfast.jpg\" class=\"card-img-top\" alt=\"...\">",
-        description: ""
+        description: " Breakfast blends are light-to-medium roasts with bright acidity and smoothly balanced flavors. They are specially blended to a flavor profile that most people enjoy in the morning."
     },
     {   id: 7,
         name: 'High',
         roast: 'dark',
         image: "<img src=\"img/high.jpeg\" class=\"card-img-top\" alt=\"...\">",
-        description: ""
+        description: "High Roast Coffee Beans are roasted in the traditional way. The Italian style is to roast until the beans turn black and oils are produced, giving this coffee a lovely bitter edge"
     },
     {   id: 8,
         name: 'Continental',
         roast: 'dark',
         image: "<img src=\"img/continental.jpeg\" class=\"card-img-top\" alt=\"...\">",
-        description: ""
+        description: "Dark-roasted coffee beans producing coffee with a Continental flavour, or the coffee itself."
     },
     {   id: 9,
         name: 'New Orleans',
         roast: 'dark',
         image: "<img src=\"img/new-orleans.jpeg\" class=\"card-img-top\" alt=\"...\">",
-        description: ""
+        description: "Flavors of Vanilla Ice Cream, Brown Sugar and Rum, Ripe Banana with a hint of Cinnamon."
     },
     {   id: 10,
         name: 'European',
         roast: 'dark',
-        image: "<img src=\"img/\" class=\"card-img-top\" alt=\"...\">",
-        description: ""
+        image: "<img src=\"img/european.jpeg\" class=\"card-img-top\" alt=\"...\">",
+        description: "European espresso, tends to be a dense, bittersweet brew with ample crema, intense and distinctive flavor profiles, and a persistent aftertaste."
     },
     {   id: 11,
         name: 'Espresso',
@@ -156,7 +158,7 @@ var coffees = [
     {   id: 12,
         name: 'Viennese',
         roast: 'dark',
-        image: "<img src=\"img/\" class=\"card-img-top\" alt=\"...\">",
+        image: "<img src=\"img/viennese.jpeg\" class=\"card-img-top\" alt=\"...\">",
         description: "Characterized by a slightly deeper color than American Roast, with small spots of oil on the bean's surface."
     },
     {   id: 13,
@@ -181,6 +183,7 @@ var inputButton = document.querySelector('#search');
 var addToList = document.querySelector( "#add")
 var userCoffee = document.querySelector('#user_create')
 var userRoast = document.querySelector('#roast-creation')
+var lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam rerum suscipit tempora!'
 
 tbody.innerHTML = renderCoffees(coffees);
 
