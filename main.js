@@ -83,9 +83,8 @@ function addCoffees() {
     newCoffee.image = "<img src='img/user-coffee.jpeg'>"
     newCoffee.description = lorem
     newCoffee.id = coffees.length + 1;
-    localStorage.setItem('newCoffee', JSON.stringify(newCoffee))
     coffees.push(newCoffee)
-    localStorage.setItem('coffees', JSON.stringify(coffees))
+    localStorage.setItem('newCoffees', JSON.stringify(coffees))
     tbody.innerHTML = renderCoffees(coffees);
 }
 
@@ -185,13 +184,13 @@ var addToList = document.querySelector( "#add")
 var userCoffee = document.querySelector('#user_create')
 var userRoast = document.querySelector('#roast-creation')
 var lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam rerum suscipit tempora!'
-var newCoffees = localStorage.getItem('coffees');
-var newCoffees = JSON.parse(newCoffees)
+var newCoffees = localStorage.getItem('newCoffees');
+var newCoffees = JSON.parse(newCoffees);
 
-if(typeof newCoffees !== 'undefined') {
-    tbody.innerHTML = renderCoffees(newCoffees);
-} else {
+if(newCoffees === null) {
     tbody.innerHTML = renderCoffees(coffees);
+} else {
+    tbody.innerHTML = renderCoffees(newCoffees);
 }
 
 inputButton.addEventListener('click', updateCoffeesNew)
