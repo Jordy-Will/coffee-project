@@ -5,7 +5,7 @@ function renderCoffee(coffee) {
     html += '<h4 class = "card-title">' + coffee.name + '</h4>';
     html += '<h6 class = "card-title">' + coffee.roast + '</h6>';
     html += '<p class = "card-text">' + coffee.description + '</p>';
-    html += "<a href='*' class='btn btn-light'>Order Now</a>"
+    html += "<a href='#' class='btn btn-light'>Order Now</a>"
     html += '</div></div></div>';
 
     return html;
@@ -75,7 +75,7 @@ function addCoffees() {
     var newName = nameArr.join("");
     newCoffee.name = newName;
     if(userRoast.value === '--Select Roast Type--'){
-        newCoffee.roast = ''
+        newCoffee.roast = 'Roast Not Specified'
     }else {
         newCoffee.roast = userRoast.value;
     }
@@ -190,7 +190,12 @@ tbody.innerHTML = renderCoffees(coffees);
 inputButton.addEventListener('click', updateCoffeesNew)
 submitButton.addEventListener('input', updateCoffees);
 input.addEventListener('input', updateCoffeesKey)
-addToList.addEventListener('click', addCoffees)
+var userCoffees = addToList.addEventListener('click', addCoffees)
+
+localStorage.setItem('userCoffees', JSON.stringify(userCoffees))
+function addEntry() {
+
+}
 
 
 
