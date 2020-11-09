@@ -185,7 +185,7 @@ var userCoffee = document.querySelector('#user_create')
 var userRoast = document.querySelector('#roast-creation')
 var lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam rerum suscipit tempora!'
 var newCoffees = localStorage.getItem('newCoffees');
-var newCoffees = JSON.parse(newCoffees);
+newCoffees = JSON.parse(newCoffees);
 
 if(newCoffees === null) {
     tbody.innerHTML = renderCoffees(coffees);

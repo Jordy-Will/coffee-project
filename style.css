@@ -46,7 +46,7 @@ nav .nav-item {
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%), url("img/coffee-beans-big.jpg");
     background-size: cover;
     background-position: center;
-    height: 20vh;
+    height: 30vh;
     color: lightgoldenrodyellow;
     margin: 0;
 }
