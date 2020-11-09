@@ -1,6 +1,6 @@
 body{
     background-color: #4f2102;
-    margin: 0 auto;
+    /*margin: 0 auto;*/
 }
 
 .coffee{
@@ -11,7 +11,7 @@ h1{
     color: lightgoldenrodyellow;
 }
 .card{
-    background-color: #474444;
+    background-color: #6c757d;
     margin: 1em 1em;
     /*width: 100%;*/
 }
@@ -26,7 +26,6 @@ h1{
 nav a {
     font-size: .75em;
     color: black;
-    margin: auto 2em;
 }
 .nav-background {
     position: absolute;
@@ -44,11 +43,12 @@ nav .nav-item {
     bottom: 6px;
 }
 #main-jumbotron {
-    background-image: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.6) 100%), url("img/coffee-beans-big.jpg");
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%,rgba(0,0,0,0.3) 100%), url("img/coffee-beans-big.jpg");
     background-size: cover;
     background-position: center;
-    height: 40vh;
+    height: 20vh;
     color: lightgoldenrodyellow;
+    margin: 0;
 }
 #main-jumbotron h1 {
     font-family: 'Playfair Display', serif;
@@ -57,7 +57,7 @@ nav .nav-item {
     text-align: center;
 }
 .form-control {
-    width: 50%;
+    /*width: 50%;*/
 }
 .forms {
     padding: 0 30px;
@@ -78,15 +78,15 @@ h3 {
     height: calc(100% - 30px);
 }
 h4 {
-    font-size: xx-large;
+    font-size: large;
     font-family: 'Playfair Display', serif;
 }
 h6{
     font-family: 'Dancing Script', cursive;
-    font-size: xx-large;
+    font-size: large;
 }
 p{
-    font-size: larger;
+    font-size: 14px;
 }
 input{
     width: 100%!important;
@@ -95,4 +95,65 @@ input{
 select{
     width: 100%!important;
     margin: 1em auto;
+}
+.scrollable {
+    height: 600px;
+    overflow-y: auto;
+}
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+.card-body .btn {
+    margin-top: auto;
+}
+.main-content {
+    max-width: 1400px;
+}
+@media screen and (max-width: 767px){
+    nav a {
+        color: lightgoldenrodyellow;
+    }
+    .content-left {
+        border-bottom: 1px solid lightgoldenrodyellow;
+    }
+}
+@media screen and (min-width: 768px){
+    .card-img-top {
+        width: 100%;
+        height: 30vw;
+        object-fit: cover;
+    }
+    nav a{
+        margin: auto 2em;
+    }
+    .content-left {
+        border-bottom: 1px solid lightgoldenrodyellow;
+    }
+}
+@media screen and (min-width: 992px){
+    .card-img-top {
+        width: 100%;
+        height: 20vw;
+        object-fit: cover;
+    }
+    .content-left {
+        border-right: 1px solid lightgoldenrodyellow;
+        border-bottom: none;
+    }
+    #main-jumbotron {
+        margin-bottom: 15px;
+    }
+}
+@media screen and (min-width: 1200px){
+    .card-img-top {
+        width: 100%;
+        height: 10vw;
+        object-fit: cover;
+    }
+}
+@media screen and (max-width: 320px){
+    h1 {
+        font-size: 48px!important;
+    }
 }

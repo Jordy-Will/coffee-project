@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Project</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -47,60 +48,67 @@
         </div>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid main-content">
         <div class="row">
-            <div class="col-6 forms">
-                <h3>Pick from our selection!</h3>
-                <form>
-                    <div class="form-group">
-                    <label for="roast-selection"></label>
-                        <select id="roast-selection" class="form-control">
-                            <option id="all">All Roasts</option>
-                            <option>light</option>
-                            <option>medium</option>
-                            <option>dark</option>
-                        </select>
-                    </div>
-                </form>
-
-                <input type="text" id="user_coffee" placeholder="Enter Coffee Name" class = "form-control">
-                <input type="button" value="Search" id="search" class =" btn btn-light">
-
-            </div>
-
-            <div class="col-6 forms">
-                <h3>Add your coffee here!</h3>
-                <div class="container input">
-                    <div class="row">
-                        <div class="col-12">
-                            <form>
-                                <div class="form-group">
-                                <label for="roast-creation"></label>
-                                <select id="roast-creation" placeholder="Roast Type" class="form-control">
-                                    <option selected>--Select Roast Type--</option>
+            <div class="col-12 col-lg-4 content-left">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-12 forms">
+                        <h3>Pick from our selection!</h3>
+                        <form>
+                            <div class="form-group">
+                            <label for="roast-selection"></label>
+                                <select id="roast-selection" class="form-control">
+                                    <option id="all">All Roasts</option>
                                     <option>light</option>
                                     <option>medium</option>
                                     <option>dark</option>
                                 </select>
-                                <input type='text' id='user_create' placeholder="Enter Coffee Name" class = "form-control">
-                                <input type="button" class="button btn btn-light " id="add" value="Add To List">
+                            </div>
+                        </form>
+
+                        <input type="text" id="user_coffee" placeholder="Enter Coffee Name" class = "form-control">
+                        <input type="button" value="Search" id="search" class =" btn btn-secondary">
+
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-12 forms">
+                        <h3>Add your coffee here!</h3>
+                            <div class="row">
+                                <div class="col-12">
+                                    <form>
+                                        <div class="form-group">
+                                        <label for="roast-creation"></label>
+                                        <select id="roast-creation" placeholder="Roast Type" class="form-control">
+                                            <option selected>--Select Roast Type--</option>
+                                            <option>light</option>
+                                            <option>medium</option>
+                                            <option>dark</option>
+                                        </select>
+                                        <input type='text' id='user_create' placeholder="Enter Coffee Name" class = "form-control">
+                                        <input type="button" class="button btn btn-secondary" id="add" value="Add To List">
+                                        </div>
+                                    </form>
                                 </div>
-                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="col-12 col-lg-8 scrollable">
+                <div id="coffees" class = 'row'></div>
+            </div>
+
         </div>
     </div>
 
-    <div class="container-fluid">
-        <div id="coffees" class = 'row'></div>
-    </div>
+
+
+
 
 
     <script src="main.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

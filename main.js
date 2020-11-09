@@ -1,12 +1,11 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<div class="coffee col-6"><div class = "card">' + coffee.image + '<div class = "card-body">';
-    // html += '<td>' + coffee.id + '</td>';
+    var html = '<div class="coffee col-12 col-md-6 col-xl-4"><div class = "card">' + coffee.image + '<div class = "card-body">';
     html += '<h4 class = "card-title">' + coffee.name + '</h4>';
     html += '<h6 class = "card-title">' + coffee.roast + '</h6>';
     html += '<p class = "card-text">' + coffee.description + '</p>';
-    html += ' <a href="#" class="btn btn-light">Order Now!</a>'
+    html += "<a href='*' class='btn btn-light'>Order Now</a>"
     html += '</div></div></div>';
 
     return html;
@@ -61,7 +60,11 @@ function updateCoffeesKey() {
             }
         }
     });
-    tbody.innerHTML = renderCoffees(filteredCoffees);
+    if(input.value === ''){
+        tbody.innerHTML = renderCoffees(coffees);
+    } else {
+        tbody.innerHTML = renderCoffees(filteredCoffees);
+    }
 }
 
 function addCoffees() {
@@ -71,28 +74,23 @@ function addCoffees() {
     nameArr[0] = nameArr[0].toUpperCase();
     var newName = nameArr.join("");
     newCoffee.name = newName;
-    newCoffee.roast = userRoast.value;
+    if(userRoast.value === '--Select Roast Type--'){
+        newCoffee.roast = ''
+    }else {
+        newCoffee.roast = userRoast.value;
+    }
     newCoffee.image = "<img src='img/user-coffee.jpeg'>"
     newCoffee.description = lorem
-    newCoffee.id =coffees.length+1;
+    newCoffee.id = coffees.length + 1;
     coffees.push(newCoffee)
     tbody.innerHTML = renderCoffees(coffees);
 }
-
-// document.getElementById("add").onclick  = function() {
-//
-//     var node = document.createElement("Li");
-//     var text = document.getElementById("user-input").value;
-//     var textnode = document.createTextNode(text);
-//     node.appendChild(textnode);
-//     document.getElementById("list").appendChild(node);
-// }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 var coffees = [
     {   id: 1,
         name: 'Light City',
-        roast: 'medium',
+        roast: 'light',
         image: "<img src=\"img/light-city.jpeg\" class=\"card-img-top\" alt=\"...\">",
         description: "It has a medium brown colour and is just a little oily on the surface. It is used in everyday coffee to bring a richer and sweeter taste to your coffee that you will remember."
     },
@@ -110,7 +108,7 @@ var coffees = [
     {   id: 4,
         name: 'City',
         roast: 'medium',
-        image: "<img src=\"img/city.jpeg\" class=\"card-img-top\" alt=\"...\">",
+        image: "<img src=\"img/city2.jpeg\" class=\"card-img-top\" alt=\"...\">",
         description: "Brewed from beans roasted to this degree will present the full flavor present in the beans without having its characteristics masked by the roast. A city roast will tend to highlight bright, acidic notes."
     },
     {   id: 5,
@@ -184,6 +182,8 @@ var addToList = document.querySelector( "#add")
 var userCoffee = document.querySelector('#user_create')
 var userRoast = document.querySelector('#roast-creation')
 var lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam rerum suscipit tempora!'
+var userInput = window.localStorage.setItem('userInput',coffees[coffees.length -1])
+document.getElementById('user_create').innerHTML = localStorage.getItem('userInput')
 
 tbody.innerHTML = renderCoffees(coffees);
 
@@ -191,5 +191,6 @@ inputButton.addEventListener('click', updateCoffeesNew)
 submitButton.addEventListener('input', updateCoffees);
 input.addEventListener('input', updateCoffeesKey)
 addToList.addEventListener('click', addCoffees)
+
 
 
