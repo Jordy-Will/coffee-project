@@ -13,11 +13,12 @@ function renderCoffee(coffee) {
 
 function renderCoffees(coffees) {
     var html = '';
-    for(var i = 0; i < coffees.length; i++) {
+    for (var i = 0; i < coffees.length; i++) {
         html += renderCoffee(coffees[i]);
     }
     return html;
 }
+
 
 function updateCoffees(e) {
     e.preventDefault(); // don't submit the form, we just want to update the data
@@ -82,7 +83,9 @@ function addCoffees() {
     newCoffee.image = "<img src='img/user-coffee.jpeg'>"
     newCoffee.description = lorem
     newCoffee.id = coffees.length + 1;
+    localStorage.setItem('newCoffee', JSON.stringify(newCoffee))
     coffees.push(newCoffee)
+    localStorage.setItem('coffees', JSON.stringify(coffees))
     tbody.innerHTML = renderCoffees(coffees);
 }
 
@@ -182,20 +185,22 @@ var addToList = document.querySelector( "#add")
 var userCoffee = document.querySelector('#user_create')
 var userRoast = document.querySelector('#roast-creation')
 var lorem = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam rerum suscipit tempora!'
-var userInput = window.localStorage.setItem('userInput',coffees[coffees.length -1])
-document.getElementById('user_create').innerHTML = localStorage.getItem('userInput')
+var newCoffees = localStorage.getItem('coffees');
+var newCoffees = JSON.parse(newCoffees)
 
-tbody.innerHTML = renderCoffees(coffees);
+if(typeof newCoffees !== 'undefined') {
+    tbody.innerHTML = renderCoffees(newCoffees);
+} else {
+    tbody.innerHTML = renderCoffees(coffees);
+}
 
 inputButton.addEventListener('click', updateCoffeesNew)
 submitButton.addEventListener('input', updateCoffees);
 input.addEventListener('input', updateCoffeesKey)
-var userCoffees = addToList.addEventListener('click', addCoffees)
+addToList.addEventListener('click', addCoffees)
 
-localStorage.setItem('userCoffees', JSON.stringify(userCoffees))
-function addEntry() {
 
-}
+
 
 
 
